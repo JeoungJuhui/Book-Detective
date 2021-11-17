@@ -54,9 +54,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Book-Page Curl\scripts\Book.cs" />
+    <Compile Include="Assets\Script\CardSystem.cs" />
     <Compile Include="Assets\Book-Page Curl\scripts\AutoFlip.cs" />
     <Compile Include="Assets\Script\SceneManager.cs" />
     <Compile Include="Assets\Script\CtrlButton.cs" />
+    <Compile Include="Assets\Script\DragExample.cs" />
+    <Compile Include="Assets\Script\DropExample.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
