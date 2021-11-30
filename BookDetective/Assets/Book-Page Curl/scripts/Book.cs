@@ -67,6 +67,7 @@ public class Book : MonoBehaviour {
     //current flip mode
     FlipMode mode;
 
+   
     void Start()
     {
         if (!canvas) canvas=GetComponentInParent<Canvas>();
@@ -95,7 +96,7 @@ public class Book : MonoBehaviour {
         ShadowLTR.rectTransform.pivot = new Vector2(0, (pageWidth / 2) / shadowPageHeight);
 
     }
-
+    
     private void CalcCurlCriticalPoints()
     {
         sb = new Vector3(0, -BookPanel.rect.height / 2);

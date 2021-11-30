@@ -47,19 +47,19 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.11</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>2.0.12</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Book-Page Curl\scripts\Book.cs" />
-    <Compile Include="Assets\Script\CardSystem.cs" />
+    <Compile Include="Assets\Script\GetCard.cs" />
     <Compile Include="Assets\Book-Page Curl\scripts\AutoFlip.cs" />
     <Compile Include="Assets\Script\SceneManager.cs" />
-    <Compile Include="Assets\Script\CtrlButton.cs" />
-    <Compile Include="Assets\Script\DragExample.cs" />
-    <Compile Include="Assets\Script\DropExample.cs" />
+    <Compile Include="Assets\Script\PageManager.cs" />
+    <Compile Include="Assets\Script\CardSlotCtrl.cs" />
+    <Compile Include="Assets\Script\ViewCard.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -260,9 +260,6 @@
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
@@ -313,6 +310,9 @@
     </Reference>
     <Reference Include="Unity.2D.Common.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VSCode.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.19f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
