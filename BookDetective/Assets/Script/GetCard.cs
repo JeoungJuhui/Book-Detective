@@ -26,7 +26,7 @@ public class GetCard : MonoBehaviour
     {
         if (card.activeSelf)
         {
-            card.transform.position = Vector3.MoveTowards(card.transform.position, slot.transform.position, 1.0f);
+            card.transform.position = Vector3.MoveTowards(card.transform.position, slot.transform.position, 2.0f);
             float x = card.transform.localScale.x;
             if (x <= 1)
                 card.transform.localScale += new Vector3(0.005f, 0.005f, 0.0001f);

@@ -53,13 +53,16 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\PageManager.cs" />
     <Compile Include="Assets\Book-Page Curl\scripts\Book.cs" />
     <Compile Include="Assets\Script\GetCard.cs" />
     <Compile Include="Assets\Book-Page Curl\scripts\AutoFlip.cs" />
     <Compile Include="Assets\Script\SceneManager.cs" />
-    <Compile Include="Assets\Script\PageManager.cs" />
-    <Compile Include="Assets\Script\CardSlotCtrl.cs" />
     <Compile Include="Assets\Script\ViewCard.cs" />
+    <Compile Include="Assets\Script\CardSlotCtrl.cs" />
+    <Compile Include="Assets\Script\SoundSystem.cs" />
+    <Compile Include="Assets\Script\CardManager.cs" />
+    <Compile Include="Assets\Script\Card.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -260,6 +263,9 @@
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VSCode.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
@@ -310,9 +316,6 @@
     </Reference>
     <Reference Include="Unity.2D.Common.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.19f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>

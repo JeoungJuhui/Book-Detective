@@ -6,6 +6,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.Events;
+
 public enum FlipMode
 {
     RightToLeft,
@@ -68,8 +69,10 @@ public class Book : MonoBehaviour {
     FlipMode mode;
 
    
+
     void Start()
     {
+
         if (!canvas) canvas=GetComponentInParent<Canvas>();
         if (!canvas) Debug.LogError("Book should be a child to canvas");
 
@@ -446,4 +449,6 @@ public class Book : MonoBehaviour {
         if (onFinish != null)
             onFinish();
     }
+
+
 }

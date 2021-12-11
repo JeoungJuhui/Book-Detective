@@ -10,8 +10,16 @@ public class AutoFlip : MonoBehaviour {
     public Book ControledBook;
     public int AnimationFramesCount = 40;
     bool isFlipping = false;
+
+    SoundSystem soundSystem;
+    //21.12.08 사운드 시스템 추가.
+
     // Use this for initialization
     void Start () {
+
+        soundSystem = GameObject.Find("EventSystem").GetComponent<SoundSystem>();
+        //21.12.08 사운드 시스템 추가.
+
         if (!ControledBook)
             ControledBook = GetComponent<Book>();
         if (AutoStartFlip)
@@ -28,6 +36,8 @@ public class AutoFlip : MonoBehaviour {
     }
     public void FlipRightPage()
     {
+        soundSystem.TurnPage();     //책 넘기는 효과음
+
         if (isFlipping) return;
         if (ControledBook.currentPage >= ControledBook.TotalPageCount) return;
         isFlipping = true;
@@ -41,6 +51,8 @@ public class AutoFlip : MonoBehaviour {
     }
     public void FlipLeftPage()
     {
+        soundSystem.TurnPage();     //책 넘기는 효과음
+
         if (isFlipping) return;
         if (ControledBook.currentPage <= 0) return;
         isFlipping = true;

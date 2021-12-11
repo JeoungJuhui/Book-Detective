@@ -53,13 +53,16 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\PageManager.cs" />
     <Compile Include="Assets\Book-Page Curl\scripts\Book.cs" />
     <Compile Include="Assets\Script\GetCard.cs" />
     <Compile Include="Assets\Book-Page Curl\scripts\AutoFlip.cs" />
     <Compile Include="Assets\Script\SceneManager.cs" />
-    <Compile Include="Assets\Script\PageManager.cs" />
-    <Compile Include="Assets\Script\CardSlotCtrl.cs" />
     <Compile Include="Assets\Script\ViewCard.cs" />
+    <Compile Include="Assets\Script\CardSlotCtrl.cs" />
+    <Compile Include="Assets\Script\SoundSystem.cs" />
+    <Compile Include="Assets\Script\CardManager.cs" />
+    <Compile Include="Assets\Script\Card.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -639,6 +642,10 @@
       <Project>{87F67514-2DA2-096B-6AEE-7F02A3A2C167}</Project>
       <Name>Unity.InternalAPIEngineBridge.001</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.VSCode.Editor.csproj">
+      <Project>{814F5C20-D2AC-0598-5BB6-0EA315A489C2}</Project>
+      <Name>Unity.VSCode.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.2D.PixelPerfect.csproj">
       <Project>{9CA4B23C-48A6-606D-78E8-4FE8905F7B1F}</Project>
       <Name>Unity.2D.PixelPerfect</Name>
@@ -746,10 +753,6 @@
     <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
       <Project>{7009080E-F6E4-52B0-4495-CE9707CB0DAB}</Project>
       <Name>Unity.2D.SpriteShape.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VSCode.Editor.csproj">
-      <Project>{814F5C20-D2AC-0598-5BB6-0EA315A489C2}</Project>
-      <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
