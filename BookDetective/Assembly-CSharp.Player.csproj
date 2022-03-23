@@ -57,12 +57,14 @@
     <Compile Include="Assets\Book-Page Curl\scripts\Book.cs" />
     <Compile Include="Assets\Script\GetCard.cs" />
     <Compile Include="Assets\Book-Page Curl\scripts\AutoFlip.cs" />
-    <Compile Include="Assets\Script\SceneManager.cs" />
-    <Compile Include="Assets\Script\ViewCard.cs" />
-    <Compile Include="Assets\Script\CardSlotCtrl.cs" />
-    <Compile Include="Assets\Script\SoundSystem.cs" />
-    <Compile Include="Assets\Script\CardManager.cs" />
+    <Compile Include="Assets\Script\SceneChange.cs" />
     <Compile Include="Assets\Script\Card.cs" />
+    <Compile Include="Assets\Script\ViewCard.cs" />
+    <Compile Include="Assets\Script\CardManager.cs" />
+    <Compile Include="Assets\Script\SoundSystem.cs" />
+    <Compile Include="Assets\Script\InteractionCard.cs" />
+    <Compile Include="Assets\Script\CharacterCardSlot.cs" />
+    <Compile Include="Assets\Script\ClickGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

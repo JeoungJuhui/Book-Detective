@@ -5,13 +5,15 @@ using UnityEngine;
 public class Card : MonoBehaviour
 {
     CardManager cardManager;
+
+    public GameObject cardsystem;
+    public GameObject pickCard;
     bool select;
-    Vector3 originPos;
 
     // Start is called before the first frame update
     void Start()
     {
-        cardManager=gameObject.GetComponent<CardManager>();
+        cardManager = cardsystem.GetComponent<CardManager>();
         Debug.Log("Play");
     }
 
@@ -22,17 +24,30 @@ public class Card : MonoBehaviour
 
      public void SelectCard()
     {
+        cardsystem.SetActive(false);
         Debug.Log("MouseOver");
         select = true;
         EnlargeCard(select);
-
+        
     }
 
     public void ExitCard()
     {
+        cardsystem.SetActive(true);
         Debug.Log("MouseExit");
         select = false;
         EnsmallCard(select);
+    }
+
+    public void CardMouseDrag()
+    {
+        gameObject.transform.position = Input.mousePosition;
+        pickCard = gameObject;
+    }
+
+    public void CardMouseUP()
+    {
+        pickCard = null;
     }
 
     void EnlargeCard(bool select)
@@ -53,7 +68,7 @@ public class Card : MonoBehaviour
         float x = gameObject.transform.localScale.x;
         if (!select)
         {
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x, -80f, +100f);
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, -40f, +100f);
             if (x >= 1)
                 gameObject.transform.localScale -= new Vector3(0.5f, 0.5f, 0.0001f);
         }
