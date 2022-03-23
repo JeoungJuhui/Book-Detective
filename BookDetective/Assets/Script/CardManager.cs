@@ -23,7 +23,6 @@ public class CardManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -31,18 +30,8 @@ public class CardManager : MonoBehaviour
     {
         int cardnum = cardList.Count;
 
-        switch (cardnum)
-        {
-            case 0:
-                break;
-            case 1:
-                CardAlignment1();
-                break;
-            case 2:
-                CardAlignment2();
-                break;
-
-        }
+        CardAlignment(cardnum);
+        
 
         int charnum = caracterCardList.Count;
 
@@ -98,37 +87,59 @@ public class CardManager : MonoBehaviour
             objList[i - 1].SetActive(false);
     }
 
-    public void CardAlignment1()
+    public void CardAlignment(int num)
     {
 
-        cardList[0].SetActive(true);
+        //for문으로 진행하려 했으나 메모리 문제로 스위치 사용.
 
-        cardList[0].transform.position = Vector3.MoveTowards(cardList[0].transform.position, new Vector3((cardLeft.position.x + cardRight.position.x) / 2, 
-            cardLeft.position.y, cardLeft.position.z), 2f);
-        float x = cardList[0].transform.localScale.x;
-        if (x <= 1)
-            cardList[0].transform.localScale += new Vector3(0.005f, 0.005f, 0.0001f);
-        else
-            return;
+        switch (num)
+        {
+            case 0:
+                Debug.Log("case 0");
+                break;
+
+            case 1:
+                Debug.Log("case 1");
+                cardList[0].SetActive(true);
+
+                cardList[0].transform.position = Vector3.MoveTowards(cardList[0].transform.position, new Vector3((cardLeft.position.x + cardRight.position.x) / 2,
+                    cardLeft.position.y, cardLeft.position.z), 2f);
+                float x = cardList[0].transform.localScale.x;
+                while (x <= 1)//나중에 현재 인덱스와 비교해 정지하는 기능
+                {
+                    cardList[num - 1].transform.localScale += new Vector3(0.005f, 0.005f, 0.0001f);
+                }
+
+                break;
+
+            case 2:
+                cardList[1].SetActive(true);
+
+                cardList[0].transform.position = Vector3.MoveTowards(cardList[0].transform.position, new Vector3((cardLeft.position.x + cardRight.position.x) / 2 - 80,
+                    cardLeft.position.y, cardLeft.position.z), 2f);
+
+                cardList[1].transform.position = Vector3.MoveTowards(cardList[1].transform.position, new Vector3((cardLeft.position.x + cardRight.position.x) / 2 + 80,
+                    cardLeft.position.y, cardLeft.position.z), 2f);
+                x = cardList[num - 1].transform.localScale.x;
+                while (x <= 1)//나중에 현재 인덱스와 비교해 정지하는 기능
+                {
+                    cardList[num - 1].transform.localScale += new Vector3(0.005f, 0.005f, 0.0001f);
+                }
+
+                break;
+
+            case 3:
+                break;
+
+            default:
+                break;
+
+        }
+
+
     }
 
-    public void CardAlignment2()
-    {
 
-        cardList[1].SetActive(true);
-
-        cardList[0].transform.position = Vector3.MoveTowards(cardList[0].transform.position, new Vector3((cardLeft.position.x + cardRight.position.x) / 2 -50,
-            cardLeft.position.y, cardLeft.position.z), 2f);
-        
-        cardList[1].transform.position = Vector3.MoveTowards(cardList[1].transform.position, new Vector3((cardLeft.position.x + cardRight.position.x)/2+50,
-            cardLeft.position.y, cardLeft.position.z), 2f);
-
-        float x = cardList[1].transform.localScale.x;
-        if (x <= 1)
-            cardList[1].transform.localScale += new Vector3(0.005f, 0.005f, 0.0001f);
-        else
-            return;
-    }
 
     public void SetSlotCard()
     {
@@ -140,6 +151,7 @@ public class CardManager : MonoBehaviour
         {
             cardSlot.transform.GetChild(num - 1).gameObject.SetActive(true);
             cardSlot.transform.GetChild(num - 1).GetComponent<Image>().sprite = cardList[cardList.Count - 1].GetComponent<Image>().sprite;
+            //이미지가 아니라 오브젝트 자체를 가지고 올 수 있도록 변경이 필요!
         }
 
         if (setSlotNum < caracterCardList.Count)

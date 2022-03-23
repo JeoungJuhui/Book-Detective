@@ -14,7 +14,7 @@ public class Card : MonoBehaviour
     void Start()
     {
         cardManager = cardsystem.GetComponent<CardManager>();
-        Debug.Log("Play");
+        cardsystem = GameObject.Find("CardSystem");
     }
 
     // Update is called once per frame
@@ -48,6 +48,8 @@ public class Card : MonoBehaviour
     public void CardMouseUP()
     {
         pickCard = null;
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, -40f, +80f);
+
     }
 
     void EnlargeCard(bool select)

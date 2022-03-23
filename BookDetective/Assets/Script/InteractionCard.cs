@@ -7,16 +7,14 @@ public class InteractionCard : MonoBehaviour
 {
     public GameObject correctCard;
     public GameObject answerCard;
-    public GameObject next;
-    AutoFlip autoFlip;
     Card card;
+    SetPage setPage;
 
     // Start is called before the first frame update
     void Start()
     {
+        setPage = gameObject.GetComponent<SetPage>();
         card = correctCard.GetComponent<Card>();
-        next.SetActive(false);
-        autoFlip = GameObject.Find("Book").GetComponent<AutoFlip>();
     }
 
     // Update is called once per frame
@@ -29,15 +27,15 @@ public class InteractionCard : MonoBehaviour
     {
         Debug.Log("MouseUp");
 
-        if (correctCard==card.pickCard)
+        if (correctCard == card.pickCard)
         {
             Debug.Log("맞습니다!");
             gameObject.GetComponent<Image>().sprite = correctCard.GetComponent<Image>().sprite;
             answerCard.SetActive(true);
-            next.SetActive(true);
-            autoFlip.FlipRightPage();
-
+            setPage.SetnextPage();
         }
+        else
+            Debug.Log("다른 카드를 사용해 보세요");
     }
 
     

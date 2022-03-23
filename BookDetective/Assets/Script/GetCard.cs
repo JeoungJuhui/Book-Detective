@@ -9,7 +9,6 @@ public class GetCard : MonoBehaviour
     public GameObject card;
     CardManager cardManager;
 
-    int slotnum;
 
     // Start is called before the first frame update
     void Start()
