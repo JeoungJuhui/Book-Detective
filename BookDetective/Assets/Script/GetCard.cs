@@ -27,7 +27,8 @@ public class GetCard : MonoBehaviour
     
     public void GetClue()
     {
-        cardManager.cardList.Add(card);
+        if(!cardManager.cardList.Contains(card))
+            cardManager.cardList.Add(card);
     }
 
     public void GetCharacter()

@@ -10,19 +10,22 @@ using UnityEngine;
 
 public class SetPage : MonoBehaviour
 {
+    [SerializeField]
     public int buttonnextPage;
     public bool nextbutton;
     public GameObject nextB;
+    public List<int> randomPage;
+
     Book book;
     AutoFlip autoFlip;
-
+    
 
     // Start is called before the first frame update
     void Start()
     {
         book = GameObject.Find("Book").GetComponent<Book>();
         autoFlip = GameObject.Find("Book").GetComponent<AutoFlip>();
-        nextB=GameObject.Find("nextpage");
+        nextB = GameObject.Find("BookCanvas").transform.Find("nextpage").gameObject;
 
 
     }
@@ -53,5 +56,12 @@ public class SetPage : MonoBehaviour
         else
             nextB.SetActive(true);
 
+    }
+
+    public void SetRandomPage()
+    {
+        int index;
+        index = Random.Range(0, randomPage.Count);
+        buttonnextPage = randomPage[index];
     }
 }

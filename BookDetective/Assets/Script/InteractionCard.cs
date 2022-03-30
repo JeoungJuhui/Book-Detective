@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class InteractionCard : MonoBehaviour
 {
-    public GameObject correctCard;
-    public GameObject answerCard;
+
     Card card;
     SetPage setPage;
+    public List<GameObject> answercards;
+    public List<int> nextPagenum;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         setPage = gameObject.GetComponent<SetPage>();
-        card = correctCard.GetComponent<Card>();
     }
 
     // Update is called once per frame
@@ -25,17 +27,26 @@ public class InteractionCard : MonoBehaviour
 
     public void DropCard()
     {
-        Debug.Log("MouseUp");
 
-        if (correctCard == card.pickCard)
+        for (int i=0; i < answercards.Count; i++)
         {
-            Debug.Log("맞습니다!");
-            gameObject.GetComponent<Image>().sprite = correctCard.GetComponent<Image>().sprite;
-            answerCard.SetActive(true);
-            setPage.SetnextPage();
+            card = answercards[i].GetComponent<Card>();
+
+            if (answercards[i] == card.pickCard)
+            {
+                Debug.Log("맞습니다!");
+                Debug.Log(answercards[i].name);
+                setPage.buttonnextPage = nextPagenum[i];
+                setPage.SetnextPage();
+                break;
+            }
+            else
+                Debug.Log("다른 카드를 사용해 보세요");
+
+            
         }
-        else
-            Debug.Log("다른 카드를 사용해 보세요");
+        card.pickCard = null;
+
     }
 
     

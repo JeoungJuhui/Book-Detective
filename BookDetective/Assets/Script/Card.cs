@@ -11,10 +11,16 @@ public class Card : MonoBehaviour
     bool select;
 
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        cardsystem = GameObject.Find("CardSystem").transform.gameObject;
+
+    }
     void Start()
     {
         cardManager = cardsystem.GetComponent<CardManager>();
-        cardsystem = GameObject.Find("CardSystem");
+
     }
 
     // Update is called once per frame
@@ -27,7 +33,9 @@ public class Card : MonoBehaviour
         cardsystem.SetActive(false);
         Debug.Log("MouseOver");
         select = true;
-        EnlargeCard(select);
+
+
+        EnlargeCard(select); //内风凭
         
     }
 
@@ -36,7 +44,8 @@ public class Card : MonoBehaviour
         cardsystem.SetActive(true);
         Debug.Log("MouseExit");
         select = false;
-        EnsmallCard(select);
+        EnsmallCard(select); //内风凭
+
     }
 
     public void CardMouseDrag()
@@ -47,7 +56,6 @@ public class Card : MonoBehaviour
 
     public void CardMouseUP()
     {
-        pickCard = null;
         gameObject.transform.position = new Vector3(gameObject.transform.position.x, -40f, +80f);
 
     }
@@ -76,6 +84,8 @@ public class Card : MonoBehaviour
         }
         else
             return;
+
+
     }
 
 }

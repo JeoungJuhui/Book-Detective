@@ -30,8 +30,16 @@ public class CardManager : MonoBehaviour
     {
         int cardnum = cardList.Count;
 
-        CardAlignment(cardnum);
-        
+        if (cardnum >= 1)
+        {
+            cardList[cardnum-1].SetActive(true);
+
+            cardList[cardnum - 1].transform.position = Vector3.MoveTowards(cardList[cardnum - 1].transform.position, new Vector3((cardLeft.position.x + cardRight.position.x) / 2+(cardnum*50),
+                cardLeft.position.y, cardLeft.position.z), 2f);
+            float x = cardList[cardnum - 1].transform.localScale.x;
+            if (x <= 1)//나중에 현재 인덱스와 비교해 정지하는 기능                
+                cardList[cardnum - 1].transform.localScale += new Vector3(0.005f, 0.005f, 0.0001f);
+        }
 
         int charnum = caracterCardList.Count;
 
@@ -91,7 +99,7 @@ public class CardManager : MonoBehaviour
     {
 
         //for문으로 진행하려 했으나 메모리 문제로 스위치 사용.
-
+        /*
         switch (num)
         {
             case 0:
@@ -100,15 +108,8 @@ public class CardManager : MonoBehaviour
 
             case 1:
                 Debug.Log("case 1");
-                cardList[0].SetActive(true);
-
-                cardList[0].transform.position = Vector3.MoveTowards(cardList[0].transform.position, new Vector3((cardLeft.position.x + cardRight.position.x) / 2,
-                    cardLeft.position.y, cardLeft.position.z), 2f);
-                float x = cardList[0].transform.localScale.x;
-                while (x <= 1)//나중에 현재 인덱스와 비교해 정지하는 기능
-                {
-                    cardList[num - 1].transform.localScale += new Vector3(0.005f, 0.005f, 0.0001f);
-                }
+                
+                
 
                 break;
 
@@ -133,9 +134,10 @@ public class CardManager : MonoBehaviour
 
             default:
                 break;
+        
 
         }
-
+        */
 
     }
 
