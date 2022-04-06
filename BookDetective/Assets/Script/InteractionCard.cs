@@ -8,6 +8,7 @@ public class InteractionCard : MonoBehaviour
 
     Card card;
     SetPage setPage;
+    CardManager cardManager;
     public List<GameObject> answercards;
     public List<int> nextPagenum;
 
@@ -17,6 +18,7 @@ public class InteractionCard : MonoBehaviour
     void Start()
     {
         setPage = gameObject.GetComponent<SetPage>();
+        cardManager = GameObject.Find("CardSystem").GetComponent<CardManager>();
     }
 
     // Update is called once per frame
@@ -32,7 +34,7 @@ public class InteractionCard : MonoBehaviour
         {
             card = answercards[i].GetComponent<Card>();
 
-            if (answercards[i] == card.pickCard)
+            if (answercards[i] == cardManager.selectCard)
             {
                 Debug.Log("맞습니다!");
                 Debug.Log(answercards[i].name);
@@ -45,9 +47,9 @@ public class InteractionCard : MonoBehaviour
 
             
         }
-        card.pickCard = null;
+        cardManager.selectCard = null;
 
     }
 
-    
+
 }

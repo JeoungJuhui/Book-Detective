@@ -5,9 +5,8 @@ using UnityEngine;
 public class Card : MonoBehaviour
 {
     CardManager cardManager;
+    GameObject cardsystem;
 
-    public GameObject cardsystem;
-    public GameObject pickCard;
     bool select;
 
     // Start is called before the first frame update
@@ -15,11 +14,12 @@ public class Card : MonoBehaviour
     private void Awake()
     {
         cardsystem = GameObject.Find("CardSystem").transform.gameObject;
+        cardManager = cardsystem.GetComponent<CardManager>();
+
 
     }
     void Start()
     {
-        cardManager = cardsystem.GetComponent<CardManager>();
 
     }
 
@@ -49,7 +49,7 @@ public class Card : MonoBehaviour
     public void CardMouseDrag()
     {
         gameObject.transform.position = Input.mousePosition;
-        pickCard = gameObject;
+        cardManager.selectCard= gameObject;
     }
 
     public void CardMouseUP()

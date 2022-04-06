@@ -8,6 +8,7 @@ public class CardManager : MonoBehaviour
 {
     [SerializeField] Transform cardLeft;
     [SerializeField] Transform cardRight;
+
     public List<GameObject> cardList;
     public List<GameObject> caracterCardList;
     public List<GameObject> missionCardList;
@@ -155,6 +156,8 @@ public class CardManager : MonoBehaviour
         {
             cardSlot.transform.GetChild(num - 1).gameObject.SetActive(true);
             cardSlot.transform.GetChild(num - 1).GetComponent<Image>().sprite = cardList[cardList.Count - 1].GetComponent<Image>().sprite;
+            cardSlot.transform.GetChild(num - 1).transform.Find("Title").GetComponent<Text>().text = cardList[cardList.Count - 1].transform.Find("Title").GetComponent<Text>().text;
+            cardSlot.transform.GetChild(num - 1).transform.Find("Text").GetComponent<Text>().text = cardList[cardList.Count - 1].transform.Find("Text").GetComponent<Text>().text;
             //이미지가 아니라 오브젝트 자체를 가지고 올 수 있도록 변경이 필요!
         }
 
@@ -169,6 +172,12 @@ public class CardManager : MonoBehaviour
             missionCardSlot.transform.GetChild(num3 - 1).gameObject.SetActive(true);
             missionCardSlot.transform.GetChild(num3 - 1).GetComponent<Image>().sprite = missionCardList[missionCardList.Count - 1].GetComponent<Image>().sprite;
         }
+    }
+
+    public void cardDrop()
+    {
+        gameObject.GetComponent<CardManager>().selectCard = null;
+        Debug.Log("Drop");
     }
 
 }

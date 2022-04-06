@@ -5,7 +5,6 @@ using UnityEngine;
 public class PageManager : MonoBehaviour
 {
     Book book;
-    SetPage setPage;
     public int currentP;//이거 지우면 문제 생기는지 확인하고 코드 정리하자 스크립트 삭제.
 
     // Start is called before the first frame update
