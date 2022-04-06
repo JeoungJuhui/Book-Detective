@@ -12,6 +12,8 @@ public class CardManager : MonoBehaviour
     public List<GameObject> caracterCardList;
     public List<GameObject> missionCardList;
 
+    public GameObject selectCard;
+
     public GameObject cardSlot;
     public GameObject caracterCardSlot;
     public GameObject missionCardSlot;
