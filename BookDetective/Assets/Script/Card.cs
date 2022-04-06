@@ -31,7 +31,6 @@ public class Card : MonoBehaviour
      public void SelectCard()
     {
         cardsystem.SetActive(false);
-        Debug.Log("MouseOver");
         select = true;
 
 
@@ -42,7 +41,6 @@ public class Card : MonoBehaviour
     public void ExitCard()
     {
         cardsystem.SetActive(true);
-        Debug.Log("MouseExit");
         select = false;
         EnsmallCard(select); //ÄÚ·çÆ¾
 
