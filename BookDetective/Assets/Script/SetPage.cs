@@ -26,6 +26,8 @@ public class SetPage : MonoBehaviour
         book = GameObject.Find("Book").GetComponent<Book>();
         autoFlip = GameObject.Find("Book").GetComponent<AutoFlip>();
         nextB = GameObject.Find("BookCanvas").transform.Find("nextpage").gameObject;
+        ActiveNextButton();
+
 
 
     }
@@ -33,7 +35,6 @@ public class SetPage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ActiveNextButton();
     }
 
     public void SetnextPage()
@@ -46,6 +47,7 @@ public class SetPage : MonoBehaviour
             return;
 
         autoFlip.FlipRightPage();
+        Debug.Log("½ÇÇà");
 
     }
     void ActiveNextButton()
