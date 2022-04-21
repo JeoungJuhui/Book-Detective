@@ -80,7 +80,7 @@ public class CardManager : MonoBehaviour
 
     }
 
-    public void CharCaseCollect(List<GameObject> objList, int i)
+    void CharCaseCollect(List<GameObject> objList, int i)
     {
         if (objList[i - 1].transform.position.x > 50)
             objList[i-1].SetActive(true);
@@ -179,5 +179,7 @@ public class CardManager : MonoBehaviour
         gameObject.GetComponent<CardManager>().selectCard = null;
         Debug.Log("Drop");
     }
+
+   
 
 }

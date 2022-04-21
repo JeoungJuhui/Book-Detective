@@ -16,7 +16,7 @@ public class SceneChange : MonoBehaviour
     // Update is called once per frame
     public void StartGame()
     {
-        SceneManager.LoadScene("StageScenes");
+        SceneManager.LoadScene("SampleScenes");
     }
 
     public void TutorialStart()

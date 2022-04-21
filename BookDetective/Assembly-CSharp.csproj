@@ -67,6 +67,7 @@
     <Compile Include="Assets\Script\CardManager.cs" />
     <Compile Include="Assets\Script\SetPage.cs" />
     <Compile Include="Assets\Script\SoundSystem.cs" />
+    <Compile Include="Assets\Script\SlotSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -34,7 +34,7 @@ public class Card : MonoBehaviour
         select = true;
 
 
-        EnlargeCard(select); //内风凭
+       StartCoroutine(EnlargeCard(select)); //内风凭
         
     }
 
@@ -42,7 +42,7 @@ public class Card : MonoBehaviour
     {
         cardsystem.SetActive(true);
         select = false;
-        EnsmallCard(select); //内风凭
+        StartCoroutine(EnsmallCard(select)); //内风凭
 
     }
 
@@ -58,7 +58,7 @@ public class Card : MonoBehaviour
 
     }
 
-    void EnlargeCard(bool select)
+    IEnumerator EnlargeCard(bool select)
     {
         float x = gameObject.transform.localScale.x;
         if (select)
@@ -67,11 +67,11 @@ public class Card : MonoBehaviour
             if (x <= 1.5)
                 gameObject.transform.localScale += new Vector3(0.5f, 0.5f, 0.0001f);
         }
-        else
-            return;
+
+        yield return null;
     }
 
-    void EnsmallCard(bool select)
+    IEnumerator EnsmallCard(bool select)
     {
         float x = gameObject.transform.localScale.x;
         if (!select)
@@ -81,7 +81,7 @@ public class Card : MonoBehaviour
                 gameObject.transform.localScale -= new Vector3(0.5f, 0.5f, 0.0001f);
         }
         else
-            return;
+            yield return null;
 
 
     }
