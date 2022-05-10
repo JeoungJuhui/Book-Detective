@@ -15,6 +15,7 @@ public class SlotSystem : MonoBehaviour
         slot = gameObject;
         slot_pos = slot.transform;
         slot_x = slot_pos.position.x;
+        slot.transform.position = new Vector3(1550f, slot_pos.position.y, slot_pos.position.z);
     }
 
     // Update is called once per frame

@@ -22,7 +22,6 @@ public class GetCard : MonoBehaviour
     void Update()
     {
         
-
     }
     
     public void GetClue()

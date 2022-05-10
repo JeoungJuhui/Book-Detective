@@ -98,51 +98,7 @@ public class CardManager : MonoBehaviour
             objList[i - 1].SetActive(false);
     }
 
-    public void CardAlignment(int num)
-    {
 
-        //for문으로 진행하려 했으나 메모리 문제로 스위치 사용.
-        /*
-        switch (num)
-        {
-            case 0:
-                Debug.Log("case 0");
-                break;
-
-            case 1:
-                Debug.Log("case 1");
-                
-                
-
-                break;
-
-            case 2:
-                cardList[1].SetActive(true);
-
-                cardList[0].transform.position = Vector3.MoveTowards(cardList[0].transform.position, new Vector3((cardLeft.position.x + cardRight.position.x) / 2 - 80,
-                    cardLeft.position.y, cardLeft.position.z), 2f);
-
-                cardList[1].transform.position = Vector3.MoveTowards(cardList[1].transform.position, new Vector3((cardLeft.position.x + cardRight.position.x) / 2 + 80,
-                    cardLeft.position.y, cardLeft.position.z), 2f);
-                x = cardList[num - 1].transform.localScale.x;
-                while (x <= 1)//나중에 현재 인덱스와 비교해 정지하는 기능
-                {
-                    cardList[num - 1].transform.localScale += new Vector3(0.005f, 0.005f, 0.0001f);
-                }
-
-                break;
-
-            case 3:
-                break;
-
-            default:
-                break;
-        
-
-        }
-        */
-
-    }
 
 
 
