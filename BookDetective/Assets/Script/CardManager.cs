@@ -23,6 +23,7 @@ public class CardManager : MonoBehaviour
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,69 +37,28 @@ public class CardManager : MonoBehaviour
         if (cardnum >= 1)
         {
             cardList[cardnum-1].SetActive(true);
-
-            cardList[cardnum - 1].transform.position = Vector3.MoveTowards(cardList[cardnum - 1].transform.position, new Vector3((cardLeft.position.x + cardRight.position.x) / 2+(cardnum*50),
-                cardLeft.position.y, cardLeft.position.z), 2f);
-            float x = cardList[cardnum - 1].transform.localScale.x;
-            if (x <= 1)//나중에 현재 인덱스와 비교해 정지하는 기능                
-                cardList[cardnum - 1].transform.localScale += new Vector3(0.005f, 0.005f, 0.0001f);
         }
 
         int charnum = caracterCardList.Count;
 
-        switch (charnum)
+        if (charnum >= 1)
         {
-            case 0:
-                break;
-            case 1:
-                CharCaseCollect(caracterCardList, charnum);
-                break;
-            case 2:
-                CharCaseCollect(caracterCardList, charnum);
-                break;
-
+            caracterCardList[charnum - 1].SetActive(true);
         }
+
 
         int casenum = missionCardList.Count;
 
-        switch (casenum)
+        if (casenum >= 1)
         {
-            case 0:
-                break;
-            case 1:
-                CharCaseCollect(missionCardList, casenum);
-                break;
-            case 2:
-                CharCaseCollect(missionCardList, casenum);
-                break;
-
+            missionCardList[casenum - 1].SetActive(true);
         }
 
 
 
-        SetSlotCard();
+    SetSlotCard();
 
     }
-
-    void CharCaseCollect(List<GameObject> objList, int i)
-    {
-        if (objList[i - 1].transform.position.x > 50)
-            objList[i-1].SetActive(true);
-
-        objList[i - 1].transform.position = Vector3.MoveTowards(objList[i - 1].transform.position, collectButton.transform.position, 2f);
-        float x = objList[i - 1].transform.localScale.x;
-        if (x <= 1)
-            objList[i - 1].transform.localScale += new Vector3(0.005f, 0.005f, 0.0001f);
-        else
-            return;
-
-        Debug.Log(objList[i-1].transform.position);
-
-        if (objList[i - 1].transform.position.x <= 50)
-            objList[i - 1].SetActive(false);
-    }
-
-
 
 
 
