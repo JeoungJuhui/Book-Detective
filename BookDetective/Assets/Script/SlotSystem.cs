@@ -5,8 +5,6 @@ using UnityEngine;
 public class SlotSystem : MonoBehaviour
 {
     GameObject slot;
-    GameObject slotList;
-    GameObject cardList;
     Transform slot_pos;
 
     float slot_x;
@@ -18,8 +16,6 @@ public class SlotSystem : MonoBehaviour
         slot_pos = slot.transform;
         slot_x = slot_pos.position.x;
         slot.transform.position = new Vector3(1550f, slot_pos.position.y, slot_pos.position.z);
-        slotList = GameObject.Find("SlotList");
-        cardList = GameObject.Find("CardList");
     }
 
     // Update is called once per frame
@@ -39,7 +35,7 @@ public class SlotSystem : MonoBehaviour
         {
             while (slot_pos.position.x < 1550f)
             {
-                slot_pos.position = Vector3.MoveTowards(slot_pos.position, new Vector3(1550f, slot_pos.position.y, slot_pos.position.z), 15f);
+                slot_pos.position = Vector3.MoveTowards(slot_pos.position, new Vector3(1550f, slot_pos.position.y, slot_pos.position.z), 3f);
                 yield return null;
 
             }
@@ -49,21 +45,11 @@ public class SlotSystem : MonoBehaviour
         {
             while (slot_x < slot_pos.position.x)
             {
-                slot_pos.position = Vector3.MoveTowards(slot_pos.position, new Vector3(slot_x, slot_pos.position.y, slot_pos.position.z), 15f);
+                slot_pos.position = Vector3.MoveTowards(slot_pos.position, new Vector3(slot_x, slot_pos.position.y, slot_pos.position.z), 3f);
                 yield return null;
 
             }
         }
 
-    }
-    public void slot_Out()
-    {
-        cardList.transform.GetChild(0).gameObject.SetActive(false);
-        slotList.transform.position -= new Vector3(150.0f, 0, 0);
-    }
-    public void slot_In()
-    {
-        cardList.transform.GetChild(0).gameObject.SetActive(true);
-        slotList.transform.position += new Vector3(150.0f, 0, 0);
     }
 }

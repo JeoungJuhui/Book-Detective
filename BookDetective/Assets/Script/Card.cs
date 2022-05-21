@@ -31,8 +31,7 @@ public class Card : MonoBehaviour
     void Update()
     {
         if(!drag)
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, slotList.transform.GetChild(num - 1).position, 15f);
-        
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, slotList.transform.GetChild(num - 1).position, 2.5f);
 
     }
 
